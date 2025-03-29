@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>Designer Profile</title>
+</head>
+<body>
+    <div class="container" style="display: flex; align-items: center;">
+        <div class="text-section" style="margin-right: 20px;">
+            <h2 class="tagline">YOU'RE SINGLE,RIGHT? SO IAM.</h2>
+            <h1 class="name">I’m Mubhaligot<br>Aidy Hasna'a Kharin</h1>
+            <p class="description">i love the cute things</p>
+            <div class="buttons">
+                <a href="my_profil.html" class="btn my-profile">MY PROFILE</a>
+
+                <a href="index.html" class="btn back-home">BACK TO HOME</a>
+
+
+                <a href="#hobbies" class="btn hobbies-button">HOBBIES</a> <!-- New button for hobbies -->
+            </div>
+        </div>
+        <div class="image-section">
+            <img src="aset/BIODATA.jpeg" alt="Haris D. Adison" class="profile-image">
+        </div>
+    </div>
+
+    <div id="hobbies" class="hobbies-section">
+        <h2 class="hobbies-title">My Hobbies</h2>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="hobby-name">Designing</div>
+                <img src="aset/desain.jpeg" alt="Designing" class="hobby-image-large">
+            </div>
+            <div class="mySlides fade">
+                <div class="hobby-name">Photography</div>
+                <img src="aset/photo.jpeg" alt="Photography" class="hobby-image-large">
+            </div>
+            <div class="mySlides fade">
+                <div class="hobby-name">Traveling</div>
+                <img src="aset/travel.jpeg" alt="Traveling" class="hobby-image-large">
+            </div>
+            <div class="mySlides fade">
+                <div class="hobby-name">Reading</div>
+                <img src="aset/book.jpeg" alt="Reading" class="hobby-image-large">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094; Previous Hobby</a>
+
+            <a class="next" onclick="plusSlides(1)">&#10095; Next Hobby</a>
+
+        </div>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+        }
+    </script>
+</body>
+</html>

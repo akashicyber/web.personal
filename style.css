@@ -1,0 +1,66 @@
+body {
+    background-color: #f9e7c9;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.cat-button {
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    position: relative; /* Allow absolute positioning of the image */
+
+    background-color: rgb(231, 231, 237); /* Change background color to blue */
+    border: none;
+    border-radius: 50%; /* Make the button circular */
+    width: 60px; /* Set width to fit the logo */
+    height: 60px; /* Set height to fit the logo */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    overflow: hidden; /* Ensure the image fits within the button */
+}
+
+.cat-button:hover {
+    transform: scale(1.05);
+}
+
+.cat-button-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.cat-text {
+    margin-left: 10px; /* Adjust spacing as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    border: 2px solid #5d4a4a; /* Add border around the text */
+    padding: 5px; /* Add padding for better appearance */
+    font-weight: bold; /* Make the font bold */
+    border-radius: 5px; /* Add slight rounding to the corners */
+    background-color: #ffffff; /* Optional: add background color */
+}
+
+.cat-image {
+    width: 40px; /* Set width to a smaller size */
+    height: 40px; /* Set height to a smaller size */
+    object-fit: cover; /* Ensure the image fits well within the button */
+    margin: 0; /* Remove margin to ensure visibility */
+    animation: walk 0.5s infinite alternate; /* Add walking animation */
+}
+
+@keyframes walk {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); } /* Simulate walking effect */
+}
